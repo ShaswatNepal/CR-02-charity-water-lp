@@ -25,39 +25,158 @@ Fonts:
 
 /* Set up the main font and background color for the whole page */
 body {
-  background-color: #f4f8fb; /* Soft light blue for a fresh look */
+  background-color: #111; /* Change to black background */
   font-family: 'Avenir', 'Proxima Nova', Arial, sans-serif;
   margin: 0;
   padding: 0;
-  color: #222;
+  color: #fff; /* Change text color to white for contrast */
 }
 
 /* Add a slight shadow and rounded corners to each section for depth */
 section {
-  background: #fff; /* White background for sections */
+  background: #222; /* Dark gray background for sections */
   border-radius: 12px; /* Rounded corners */
   box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07); /* Soft blue shadow */
   margin: 24px 10px; /* Space between sections */
   padding: 24px 16px;
 }
 
+/* Header Bar Styles */
+header {
+  background-color: #2E9DF7; /* Restore Charity:Water blue background */
+  color: #fff; /* White text for contrast */
+  padding: 18px 0 10px 0;
+  text-align: left; /* Align header content to the left */
+  position: relative;
+}
+
+/* Align logo and text side by side and same size */
+.header-logo-title {
+  display: flex; /* Place items in a row */
+  align-items: center; /* Vertically center items */
+  margin-left: 24px; /* Space from the left edge */
+}
+
+.header-logo-title img {
+  height: 60px; /* Make the logo bigger */
+  width: 60px;  /* Set logo width to match text height */
+  margin-right: 14px; /* Space between logo and text */
+}
+
+.header-logo-title h1 {
+  color: #111; /* Black text */
+  font-size: 2em;
+  font-weight: bold;
+  margin: 0;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* Ensure the donate button is always in line with the Charity:Water title */
+.header-bar {
+  display: flex;
+  align-items: center; /* Vertically align items in the header */
+  justify-content: space-between;
+  flex-wrap: wrap; /* Allow wrapping on very small screens */
+}
+
+.header-donate-align {
+  display: flex;
+  align-items: center; /* Vertically align the donate button */
+  margin-right: 32px;
+}
+
+/* Place the donate button on the right, aligned with logo/text */
+.header-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  margin: 0 0 8px 24px; /* Add left margin for spacing */
+  font-size: 2em;
+  font-weight: bold;
+  display: inline-block; /* Keep h1 on the left */
+  vertical-align: middle;
+}
+
+header nav {
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 40px; /* Space between title and nav */
+}
+
+header nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+}
+
+header nav ul li {
+  display: inline;
+  margin: 0 12px;
+}
+
+header nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+}
+
+header nav ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Donate button in the header */
+.donate-header-button {
+  background-color: #333333; /* Dark background for the button */
+  color: #ffd500; /* Yellow text color */
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  margin-left: 12px;
+  transition: background 0.3s;
+  margin-right: 32px;
+  float: none;
+  display: inline-block;
+}
+
+.donate-header-button:hover {
+  background-color: #555; /* Slightly lighter on hover */
+  color: #fff;
+}
+
+/* Remove float from nav ul and li for simpler layout */
+header nav ul {
+  float: none;
+  margin-right: 0;
+}
+
+header nav ul li {
+  float: none;
+  display: inline;
+}
+
+header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
 /* Hero Section Styles */
 .hero {
-  position: relative; /* Needed for overlay */
-  /* Set a background image that covers the whole section */
-  background-image: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1500&q=80');
-  background-size: cover;      /* Make the image cover the whole area */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat;
-  color: #fff;                 /* White text for contrast */
-  text-align: center;          /* Center the text */
-  padding: 60px 20px;          /* Add space above and below */
+  position: relative;
+  background: none; /* Remove background image and color */
+  color: #ffd500; /* Set text color to yellow */
+  text-align: center;
+  padding: 60px 20px;
   border-radius: 0 0 16px 16px; /* Only round bottom corners */
-
-  /* Add a dark overlay for better text readability */
-  /* This uses a simple linear-gradient overlay */
-  background-blend-mode: darken;
-  background-color: rgba(46, 157, 247, 0.45); /* Blue overlay */
 }
 
 /* Make the headline bold and modern */
@@ -76,10 +195,137 @@ section {
   text-shadow: 0 1px 4px rgba(0,0,0,0.12);
 }
 
+/* Hero Section: side-by-side layout for text and image */
+.hero.hero-flex {
+  display: flex; /* Place text and image in a row */
+  align-items: center; /* Vertically center items */
+  justify-content: space-between; /* Space between text and image */
+  gap: 32px; /* Space between text and image */
+  padding: 60px 20px;
+}
+
+.hero-text {
+  flex: 1;
+}
+
+.hero-image-right {
+  max-width: 480px; /* Make the hero image larger */
+  width: 55vw;      /* Use more of the screen width */
+  border-radius: 12px;
+  display: block;
+}
+
+/* Responsive: On small screens, keep the image big but not too wide */
+@media (max-width: 800px) {
+  .hero.hero-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 18px;
+  }
+  .hero-image-right {
+    width: 90vw;
+    max-width: 95vw;
+  }
+}
+
+/* Responsive Design: Make the site look good on all desktops, Apple, and Samsung devices */
+
+/* Already has a viewport meta tag in HTML for scaling */
+
+/* Make header and hero section responsive */
+@media (max-width: 1200px) {
+  .hero.hero-flex {
+    gap: 18px;
+  }
+  .hero-image-right {
+    max-width: 350px;
+    width: 40vw;
+  }
+}
+
+@media (max-width: 900px) {
+  .header-logo-title img {
+    height: 44px;
+    width: 44px;
+  }
+  .header-logo-title h1 {
+    font-size: 1.3em;
+  }
+  .donate-header-button {
+    padding: 10px 18px;
+    font-size: 0.95em;
+  }
+  .hero h1 {
+    font-size: 2em;
+  }
+  .hero-image-right {
+    max-width: 260px;
+    width: 50vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero.hero-flex {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 32px 8px;
+  }
+  .hero-image-right {
+    width: 90vw;
+    max-width: 95vw;
+    margin-top: 18px;
+  }
+  .hero h1 {
+    font-size: 1.3em;
+  }
+  .hero p {
+    font-size: 1em;
+  }
+  .header-bar {
+    flex-direction: row; /* Keep items in a row */
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .header-logo-title {
+    margin-left: 0;
+  }
+  .header-donate-align {
+    margin-right: 0;
+  }
+  .donate-header-button {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 400px) {
+  .hero h1 {
+    font-size: 1em;
+  }
+  .hero-image-right {
+    max-width: 98vw;
+  }
+}
+
+/* Make sure images never overflow their containers */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Add a little extra padding for touch devices */
+@media (pointer: coarse) {
+  .donate-header-button, .donate-button {
+    padding: 16px 32px;
+    font-size: 1.1em;
+  }
+}
+
 /* Story Section Styles */
 .story {
-  background-color: #8BD1CB; /* Secondary Light Blue */
-  color: #222;
+  background-color: #222; /* Match section background to dark */
+  color: #fff; /* White text for contrast */
   text-align: center;
   padding: 30px 20px;
 }
@@ -93,8 +339,8 @@ h2 {
 
 /* Call-to-Action Section Styles */
 .call-to-action {
-  background-color: #FFC907; /* Primary Yellow */
-  color: #222;
+  background-color: #222; /* Match section background to dark */
+  color: #fff; /* White text for contrast */
   text-align: center;
   padding: 30px 20px;
 }
@@ -134,6 +380,79 @@ h2 {
 /* Add some spacing between sections */
 section {
   margin-bottom: 20px;
+}
+
+/* Small Call-to-Action Section Styles */
+.small-cta {
+  background-color: #FFC907; /* Yellow background */
+  color: #222;
+  text-align: center;
+  padding: 16px 10px; /* Smaller padding for a compact look */
+  margin: 18px auto 0 auto;
+  border-radius: 8px;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+}
+
+.small-cta h2 {
+  font-size: 1.3em;
+  margin: 0 0 6px 0;
+}
+
+.small-cta p {
+  font-size: 1em;
+  margin: 0 0 10px 0;
+}
+
+.small-cta .donate-button {
+  padding: 8px 22px;
+  font-size: 1em;
+  margin-top: 0;
+}
+
+/* Inline small call-to-action inside hero section */
+.small-cta-inline {
+  background-color: #0099cc; /* Change to blue background */
+  color: #fff; /* White text for contrast */
+  text-align: center;
+  padding: 16px 10px;
+  margin: 24px 0 0 0;
+  border-radius: 8px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(46, 157, 247, 0.07);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.small-cta-inline h2 {
+  color: #ffd500; /* Set 'Join the Cause' text to yellow */
+  font-size: 1.2em;
+  margin: 0 0 6px 0;
+}
+
+.small-cta-inline p {
+  font-size: 1em;
+  margin: 0 0 10px 0;
+}
+
+.small-cta-inline .donate-button {
+  background-color: #333333;
+  color: #ffd500;
+  padding: 12px 28px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1em;
+  border: none;
+  margin-left: 12px;
+  transition: background 0.3s;
+  margin-top: 0;
+  display: inline-block;
+}
+
+.small-cta-inline .donate-button:hover {
+  background-color: #555;
+  color: #fff;
 }
 
 /* 

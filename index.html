@@ -3,45 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Charity Water Landing Page</title>
+    <title>Charity:Water Campaign</title>
     <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
-    <!-- Hero Section: This is the main banner at the top of the page -->
-    <section class="hero">
-        <!-- Main headline -->
-        <h1>Clean Water for Everyone</h1>
-        <!-- Subheadline -->
-        <p>Join us in bringing safe, clean water to communities in need.</p>
-    </section>
-
-    <!-- Story Section: This tells the story of the nonprofit -->
-    <section class="story">
-        <h2>Our Story</h2>
-        <p>
-         
-    </section>
-
-    <!-- Real-World Impact Story Section -->
-    <section class="impact-story">
-        <!-- Section headline -->
-        <h2>Real Impact: Meet Amina</h2>
-        <!-- Container for image and text -->
-        <div class="impact-content">
-            <!-- Impact image -->
-            <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=600&q=80" alt="Amina smiling with clean water" class="impact-image">
-            <!-- Impact story text -->
-            <p>
-                Amina used to walk miles every day to collect water for her family. Thanks to your support, her village now has a clean water well. Amina can go to school and her family is healthier and happier.
-            </p>
+    <header>
+        <!-- Header bar with logo, text, and donate button aligned in a row -->
+        <div class="header-bar">
+            <div class="header-logo-title">
+                <img src="img/water-can-transparent.png" alt="Charity:Water Logo">
+                <h1>Charity:Water</h1>
+            </div>
+            <!-- Donate button stays in line with the title using flex alignment -->
+            <div class="header-donate-align">
+                <a href="#donate" class="donate-header-button">Donate</a>
+            </div>
         </div>
-    </section>
+    </header>
 
-    <!-- Call-to-Action Section: This encourages visitors to take action -->
-    <section class="call-to-action">
-        <h2>Make a Difference</h2>
-        <p>Your support can help save lives. Every donation brings us closer to a world with clean water for all.</p>
-        <a href="#" class="donate-button">Donate Now</a>
+    <!-- Hero Section: This is the main banner at the top of the page -->
+    <section class="hero hero-flex">
+        <div class="hero-text">
+            <!-- Main headline -->
+            <h1>Donate Today, Lead Tomorrow.</h1>
+            <!-- Subheadline -->
+            <p>Water Projects That Prove Change Is Possible</p>
+            <!-- New line below subheadline -->
+            <p>Fund clean water. Empower communities.</p>
+            <!-- Small Call-to-Action content combined here -->
+            <div class="small-cta-inline cta-row">
+                <h2 style="display:inline; margin-right:16px; vertical-align:middle;">Join the Cause</h2>
+                <a href="#" class="donate-button cta-inline-btn" style="display:inline-block; vertical-align:middle;">Donate Now</a>
+            </div>
+        </div>
+        <img src="img/hero_image.png" alt="Clean water hero image" class="hero-image-right">
     </section>
 </body>
 </html>
